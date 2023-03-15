@@ -16,16 +16,16 @@ public class HIP_InclinedPlane : HapticInteractionPoint
     void Start()
     {
         base.Start();
-        GetPositionLabels();
-        UpdatePositionLabels();
+        //GetPositionLabels();
+        //UpdatePositionLabels();
 
     }
     // Update is called once per frame
     void Update()
     {
         base.Update();
-        GetPositionLabels();
-        UpdatePositionLabels();
+        //GetPositionLabels();
+        //UpdatePositionLabels();
 
         // update position
         if (isTouching)
@@ -47,12 +47,12 @@ public class HIP_InclinedPlane : HapticInteractionPoint
 
     private void GetPositionLabels()
     {
-        xPos = GameObject.Find("x_text").GetComponent<TextMeshProUGUI>();
-        yPos = GameObject.Find("y_text").GetComponent<TextMeshProUGUI>();
-        zPos = GameObject.Find("z_text").GetComponent<TextMeshProUGUI>();
-        massValue = GameObject.Find("mass_text").GetComponent<TextMeshProUGUI>();
-        massTextValue = GameObject.Find("Input Mass").GetComponent<InputField>();
-        massSlider = GameObject.Find("Slider Mass").GetComponent<Slider>();
+        //xPos = GameObject.Find("x_text").GetComponent<TextMeshProUGUI>();
+        //yPos = GameObject.Find("y_text").GetComponent<TextMeshProUGUI>();
+        //zPos = GameObject.Find("z_text").GetComponent<TextMeshProUGUI>();
+        //massValue = GameObject.Find("mass_text").GetComponent<TextMeshProUGUI>();
+        //massTextValue = GameObject.Find("Input Mass").GetComponent<InputField>();
+        //massSlider = GameObject.Find("Slider Mass").GetComponent<Slider>();
     }
 
     private void UpdatePositionLabels()

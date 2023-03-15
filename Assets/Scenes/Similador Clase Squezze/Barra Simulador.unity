@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 58497832}
   - component: {fileID: 58497835}
   - component: {fileID: 58497834}
+  - component: {fileID: 58497836}
   m_Layer: 0
   m_Name: WoodFloor
   m_TagString: Untagged
@@ -206,6 +207,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58497831}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &58497836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58497831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &309420365
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +249,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 322508220}
   m_Father: {fileID: 1423303637}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -300,7 +315,8 @@ GameObject:
   - component: {fileID: 322508220}
   - component: {fileID: 322508219}
   - component: {fileID: 322508218}
-  - component: {fileID: 322508217}
+  - component: {fileID: 322508221}
+  - component: {fileID: 322508222}
   m_Layer: 0
   m_Name: HIP
   m_TagString: Untagged
@@ -308,29 +324,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &322508217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322508216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375af9f196c84ac4ca85e5094519d22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hapticDeviceName: Haptic Device 1
-  hapticDeviceNumber: 0
-  mass: 0
-  statusButton0: 0
-  statusButton1: 0
-  statusButton2: 0
-  statusButton3: 0
-  Kp: 10
-  Kv: 20
-  Kvr: 10
-  Kvg: 10
 --- !u!54 &322508218
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -372,9 +365,44 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1423303637}
-  m_RootOrder: 1
+  m_Father: {fileID: 309420366}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322508221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322508216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccadcd7f33a645548b92fbc21d75afd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &322508222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322508216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837bbec463f205d46be34efc629e1710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hapticDeviceName: Haptic Device 1
+  hapticDeviceNumber: 0
+  mass: 0
+  statusButton0: 0
+  statusButton1: 0
+  statusButton2: 0
+  statusButton3: 0
+  Kp: 10
+  Kv: 20
+  Kvr: 10
+  Kvg: 10
 --- !u!1 &739228673
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +560,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 309420366}
-  - {fileID: 322508220}
   - {fileID: 1483631027}
   m_Father: {fileID: 739228674}
   m_RootOrder: 2
@@ -546,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1483631027}
-  - component: {fileID: 1483631026}
+  - component: {fileID: 1483631028}
   m_Layer: 0
   m_Name: Haptic Manager
   m_TagString: Untagged
@@ -554,7 +581,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1483631026
+--- !u!4 &1483631027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483631025}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.290805, y: 3.157788, z: 5.346027}
+  m_LocalScale: {x: 0.7411325, y: 0.7411325, z: 0.7411325}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1423303637}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483631028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -563,7 +605,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1483631025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ad0edad4e24e6448a1ee09208afba1, type: 3}
+  m_Script: {fileID: 11500000, guid: 21807393f76a384488e3a72e68ef8702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   permitedHapticsDevices: 0
@@ -580,21 +622,6 @@ MonoBehaviour:
   _inclination: 0
   CubeCanMove: 0
   ramp: {fileID: 13400000, guid: d985ba975ad2a0540af1b787e264e10a, type: 2}
---- !u!4 &1483631027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483631025}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.290805, y: 3.157788, z: 5.346027}
-  m_LocalScale: {x: 0.7411325, y: 0.7411325, z: 0.7411325}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1423303637}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488181797
 GameObject:
   m_ObjectHideFlags: 0
