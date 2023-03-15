@@ -39,8 +39,7 @@ void Update()
 void OnCollisionEnter(Collision collision)
 {
         Debug.Log("Enter");
-    if (collision.gameObject.name == "WoodFloor")
-    {
+
         // HIP is touching an object
         isTouching = true;
 
@@ -53,8 +52,7 @@ void OnCollisionEnter(Collision collision)
         // update collision point
         objectCollidingPosition = position + (collision.contacts[0].normal * Mathf.Abs(collision.contacts[0].separation));
         objectCollidingNormal = collision.contacts[0].normal;
-        
-    }
+
 }
 
 void OnCollisionStay(Collision collision){
